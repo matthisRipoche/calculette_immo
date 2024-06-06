@@ -1,0 +1,11 @@
+#section_tableau {
+    margin-top: 50px;
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        border: 1px solid $blue_microlead;
+        border-radius: 10px;
+    }
+}
