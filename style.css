@@ -14,6 +14,7 @@ h2 {
 
 .wrapper {
   max-width: 1000px;
+  width: calc(100% - 50px);
   margin: 0 auto;
 }
 
@@ -34,6 +35,7 @@ header img {
   align-items: center;
   border: 1px solid #234b68;
   border-radius: 10px;
+  box-shadow: 0 4px 8px #4b5563;
 }
 #section_form .content .inputs {
   display: flex;
@@ -66,6 +68,7 @@ header img {
   color: white;
   background: #234b68;
   border-radius: 0 10px 10px 0;
+  box-shadow: 0 2px 4px #4b5563;
 }
 #section_form .content .inputs .input.euro::after {
   content: "€";
@@ -83,10 +86,11 @@ header img {
 }
 #section_form .content .inputs .input input {
   margin-right: 60px;
-  border: 1px solid black;
+  border: 1px solid #234b68;
   padding-left: 10px;
   font-size: 16px;
   font-family: "Nunito Sans", sans-serif;
+  box-shadow: 0 2px 4px #234b68;
 }
 #section_form .content .inputs .input input[type=number] {
   -moz-appearance: textfield;
@@ -114,6 +118,7 @@ header img {
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 2px 4px #4b5563;
   margin: 80px 0 50px;
   transition: all 0.05s ease-in-out;
 }
@@ -130,4 +135,15 @@ header img {
   align-items: center;
   border: 1px solid #234b68;
   border-radius: 10px;
+  box-shadow: 0 4px 8px #4b5563;
+}
+#section_tableau .content table {
+  width: calc(100% - 100px);
+  border-spacing: 0;
+}
+#section_tableau .content table thead {
+  padding-bottom: 50px;
+}
+#section_tableau .content table thead th {
+  text-align: left;
 }/*# sourceMappingURL=style.css.map */

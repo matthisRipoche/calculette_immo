@@ -13,5 +13,7 @@ h2 {
 
 .wrapper {
     max-width: 1000px;
+
+    width: calc(100% - 50px);
     margin: 0 auto;
 }

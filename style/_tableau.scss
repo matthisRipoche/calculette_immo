@@ -7,5 +7,24 @@
 
         border: 1px solid $blue_microlead;
         border-radius: 10px;
+
+        box-shadow: 0 4px 8px #4b5563;
+
+        table {
+            width: calc(100% - 100px);
+            border-spacing: 0;
+            thead {
+                padding-bottom: 50px;
+                th {
+                    text-align: left;
+                }
+            }
+            tbody {
+                tr {
+                    td {
+                    }
+                }
+            }
+        }
     }
 }

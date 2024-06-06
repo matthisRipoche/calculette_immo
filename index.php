@@ -29,7 +29,7 @@
                     </div>
                     <div class="input pourcentage">
                         <label for="">Taux nominal</label>
-                        <input id="taux" type="number" placeholder="1.2" required>
+                        <input id="taux" type="number" placeholder="1.2" step="0.01" required>
                     </div>
                     <div class="input ans">
                         <label for="">Durée de remboursement</label>
@@ -49,14 +49,24 @@
                 <table>
                     <thead>
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Mois</th>
+                            <th>Solde initial</th>
+                            <th>Echeance</th>
+                            <th>Interets</th>
+                            <th>Amortissement</th>
+                            <th>Solde restant</th>
                         </tr>
                     </thead>
+                    <tbody id="table-body">
+                        <tr>
+                            <td>1</td>
+                            <td>100 000€</td>
+                            <td>607,33€</td>
+                            <td>100€</td>
+                            <td>507,33€</td>
+                            <td>99 492,62€</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

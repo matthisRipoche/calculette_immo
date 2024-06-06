@@ -8,6 +8,8 @@
         border: 1px solid $blue_microlead;
         border-radius: 10px;
 
+        box-shadow: 0 4px 8px #4b5563;
+
         .inputs {
             display: flex;
             flex-direction: column;
@@ -44,6 +46,8 @@
                     color: white;
                     background: $blue_microlead;
                     border-radius: 0 10px 10px 0;
+
+                    box-shadow: 0 2px 4px #4b5563;
                 }
 
                 &.euro::after {
@@ -64,10 +68,11 @@
 
                 input {
                     margin-right: 60px;
-                    border: 1px solid black;
+                    border: 1px solid $blue_microlead;
                     padding-left: 10px;
                     font-size: 16px;
                     font-family: "Nunito Sans", sans-serif;
+                    box-shadow: 0 2px 4px $blue_microlead;
 
                     &[type="number"] {
                         -moz-appearance: textfield;
@@ -96,6 +101,7 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
+            box-shadow: 0 2px 4px #4b5563;
 
             margin: 80px 0 50px;
 
