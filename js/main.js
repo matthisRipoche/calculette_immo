@@ -143,6 +143,7 @@ function FormManager() {
 }
 
 function pdfManager() {
-    const pdfButton = document.querySelector("#pdfbutton");
+    const pdfButton = document.querySelector("#pdfbutton");*
+    pdfButton.addEventListener
     console.log("ok");
 }
