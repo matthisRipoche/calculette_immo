@@ -18,6 +18,27 @@ h2 {
   margin: 0 auto;
 }
 
+.btn {
+  width: 200px;
+  color: white;
+  font-size: 16px;
+  background: #234b68;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px #4b5563;
+  margin: 80px 0 50px;
+  transition: all 0.05s ease-in-out;
+}
+.btn:hover {
+  background: #29517f;
+}
+
+#errormsg {
+  color: orange;
+}
+
 header {
   padding: 100px 0;
 }
@@ -109,33 +130,47 @@ header img {
   text-indent: 0;
   padding-left: 10px;
 }
-#section_form .content #btn_submit {
-  width: 200px;
-  color: white;
-  font-size: 16px;
-  background: #234b68;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 2px 4px #4b5563;
-  margin: 80px 0 50px;
-  transition: all 0.05s ease-in-out;
+#section_form .content .inputs .input input#montant.error {
+  border-color: orange;
 }
-#section_form .content #btn_submit:hover {
-  background: #29517f;
+#section_form .content .inputs .input input#taux.error {
+  border-color: orange;
+}
+#section_form .content .inputs .input input#duree.error {
+  border-color: orange;
 }
 
 #section_tableau {
+  display: none;
   margin-top: 50px;
+}
+#section_tableau.active {
+  display: block;
 }
 #section_tableau .content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   border: 1px solid #234b68;
   border-radius: 10px;
   box-shadow: 0 4px 8px #4b5563;
+}
+#section_tableau .content #close_tab {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #234b68;
+  transform: rotateZ(45deg);
+  cursor: pointer;
 }
 #section_tableau .content table {
   width: calc(100% - 100px);

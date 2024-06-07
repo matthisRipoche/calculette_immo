@@ -88,27 +88,17 @@
                         text-indent: 0;
                         padding-left: 10px;
                     }
+
+                    &#montant.error {
+                        border-color: orange;
+                    }
+                    &#taux.error {
+                        border-color: orange;
+                    }
+                    &#duree.error {
+                        border-color: orange;
+                    }
                 }
-            }
-        }
-
-        #btn_submit {
-            width: 200px;
-            color: white;
-            font-size: 16px;
-            background: $blue_microlead;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 4px #4b5563;
-
-            margin: 80px 0 50px;
-
-            transition: all 0.05s ease-in-out;
-
-            &:hover {
-                background: $blue_active_microlead;
             }
         }
     }

@@ -1,14 +1,41 @@
 #section_tableau {
+    display: none;
     margin-top: 50px;
+    &.active {
+        display: block;
+    }
     .content {
         display: flex;
         flex-direction: column;
         align-items: center;
+        position: relative;
 
         border: 1px solid $blue_microlead;
         border-radius: 10px;
 
         box-shadow: 0 4px 8px #4b5563;
+
+        #close_tab {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+
+            color: white;
+            font-size: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: $blue_microlead;
+
+            transform: rotateZ(45deg);
+
+            cursor: pointer;
+        }
 
         table {
             width: calc(100% - 100px);
@@ -17,12 +44,6 @@
                 padding-bottom: 50px;
                 th {
                     text-align: left;
-                }
-            }
-            tbody {
-                tr {
-                    td {
-                    }
                 }
             }
         }

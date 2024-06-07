@@ -25,25 +25,28 @@
                 <div class="inputs">
                     <div class="input euro">
                         <label for="">Montant emprunté</label>
-                        <input id="montant" type="number" placeholder="100 000" required>
+                        <input id="montant" type="text" placeholder="100 000" required>
                     </div>
                     <div class="input pourcentage">
                         <label for="">Taux nominal</label>
-                        <input id="taux" type="number" placeholder="1.2" step="0.01" required>
+                        <input id="taux" type="text" placeholder="1.2" step="0.01" required>
                     </div>
                     <div class="input ans">
                         <label for="">Durée de remboursement</label>
-                        <input id="duree" type="number" placeholder="15" required>
+                        <input id="duree" type="text" placeholder="15" required>
                     </div>
+                    <div id="error"></div>
                 </div>
 
-                <input id="btn_submit" type="submit" value="Calculer">
+
+                <input class="btn" id="btn_submit" type="submit" value="Calculer">
             </form>
         </div>
     </section>
     <section id="section_tableau">
         <div class="wrapper">
             <div class="content">
+                <div id="close_tab">+</div>
                 <h2>Tableau d'amortissement</h2>
 
                 <table>
@@ -58,20 +61,16 @@
                         </tr>
                     </thead>
                     <tbody id="table-body">
-                        <tr>
-                            <td>1</td>
-                            <td>100 000€</td>
-                            <td>607,33€</td>
-                            <td>100€</td>
-                            <td>507,33€</td>
-                            <td>99 492,62€</td>
-                        </tr>
+
                     </tbody>
                 </table>
+
+                <input class="btn" type="button" value="Download PDF">
             </div>
         </div>
     </section>
     <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </body>
 
 </html>
