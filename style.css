@@ -122,13 +122,9 @@ header img {
 }
 #section_form .content .inputs .input input::-moz-placeholder {
   font-size: 16px;
-  text-indent: 0;
-  padding-left: 10px;
 }
 #section_form .content .inputs .input input::placeholder {
   font-size: 16px;
-  text-indent: 0;
-  padding-left: 10px;
 }
 #section_form .content .inputs .input input#montant.error {
   border-color: orange;

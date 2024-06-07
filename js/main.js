@@ -15,9 +15,7 @@ function FormManager() {
         const tbody = document.querySelector("#table-body");
         tbody.innerHTML = "";
 
-        const montant = parseFloat(
-            document.querySelector("#montant").value.replace(/\s/g, "")
-        );
+        const montant = document.querySelector("#montant").value;
         const taux = parseFloat(document.querySelector("#taux").value);
         const duree = parseInt(document.querySelector("#duree").value) * 12;
 
@@ -50,30 +48,48 @@ function FormManager() {
         taux.classList.remove("error");
         duree.classList.remove("error");
 
-        let hasError = false;
-        if (montantValue === "" || isNaN(montantValue)) {
-            tabError["montant"] = "du montant";
-            hasError = true;
-            montant.classList.add("error");
-        }
-        if (tauxValue === "" || isNaN(tauxValue)) {
-            tabError["taux"] = "du taux";
-            hasError = true;
-            taux.classList.add("error");
-        }
-        if (dureeValue === "" || isNaN(dureeValue)) {
-            tabError["duree"] = "de la durée";
-            hasError = true;
-            duree.classList.add("error");
+        function isNotEmpty(value) {
+            return value != "";
         }
 
-        if (hasError) {
-            errorMSG = `Veuillez bien saisir les sections: ${Object.values(
-                tabError
-            )
-                .filter((v) => v !== "")
-                .join(", ")}`;
+        function isNumber(value) {
+            return !isNaN(value) && isFinite(value);
         }
+
+        function isMontantOK() {
+            return isNotEmpty(montantValue) && isNumber(montantValue);
+        }
+
+        function isTauxOK() {}
+
+        console.log("isNotEmpty :" + isNotEmpty(montantValue));
+        console.log("isNumber :" + isNumber(montantValue));
+        console.log("isMontant OK :" + isMontantOK());
+
+        // let hasError = false;
+        // if (montantValue === "" || isNaN(montantValue)) {
+        //     tabError["montant"] = "du montant";
+        //     hasError = true;
+        //     montant.classList.add("error");
+        // }
+        // if (tauxValue === "" || isNaN(tauxValue)) {
+        //     tabError["taux"] = "du taux";
+        //     hasError = true;
+        //     taux.classList.add("error");
+        // }
+        // if (dureeValue === "" || isNaN(dureeValue)) {
+        //     tabError["duree"] = "de la durée";
+        //     hasError = true;
+        //     duree.classList.add("error");
+        // }
+
+        // if (hasError) {
+        //     errorMSG = `Veuillez bien saisir les sections: ${Object.values(
+        //         tabError
+        //     )
+        //         .filter((v) => v !== "")
+        //         .join(", ")}`;
+        // }
 
         return errorMSG;
     }
@@ -142,8 +158,4 @@ function FormManager() {
     }
 }
 
-function pdfManager() {
-    const pdfButton = document.querySelector("#pdfbutton");*
-    pdfButton.addEventListener
-    console.log("ok");
-}
+function pdfManager() {}
