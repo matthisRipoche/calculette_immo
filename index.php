@@ -49,7 +49,7 @@
                 <div id="close_tab">+</div>
                 <h2>Tableau d'amortissement</h2>
 
-                <table>
+                <table id="mytable">
                     <thead>
                         <tr>
                             <th>Mois</th>
@@ -65,12 +65,11 @@
                     </tbody>
                 </table>
 
-                <input class="btn" type="button" value="Download PDF">
+                <input class="btn" id="pdfbutton" type="button" value="Download PDF">
             </div>
         </div>
     </section>
-    <script src="main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
