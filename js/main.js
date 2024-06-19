@@ -16,10 +16,14 @@ function FormManager() {
         tbody.innerHTML = "";
 
         const montant = document.querySelector("#montant").value;
-        const taux = parseFloat(document.querySelector("#taux").value);
-        const duree = parseInt(document.querySelector("#duree").value) * 12;
+        const taux = document.querySelector("#taux").value;
+        const duree = document.querySelector("#duree").value;
 
         const errorMSG = GestionErreur(tbody, montant, taux, duree);
+
+        console.log("avant");
+        console.log(errorMSG);
+        console.log("apres");
 
         if (errorMSG === "") {
             Calcul(tbody, montant, taux, duree);
@@ -39,6 +43,7 @@ function FormManager() {
             taux: "",
             duree: "",
         };
+        let hasError = false;
 
         const montant = document.querySelector("#montant");
         const taux = document.querySelector("#taux");
@@ -56,40 +61,55 @@ function FormManager() {
             return !isNaN(value) && isFinite(value);
         }
 
+        function hasMaxOneDecimal(value) {
+            const pattern = /^\d+(\.\d{1})?$/;
+            return pattern.test(value.toString());
+        }
+
+        function isInt(value) {
+            const pattern = /^\d+(\.\d{0})?$/;
+            return pattern.test(value.toString());
+        }
+
         function isMontantOK() {
             return isNotEmpty(montantValue) && isNumber(montantValue);
         }
 
-        function isTauxOK() {}
+        function isTauxOK() {
+            return (
+                isNotEmpty(tauxValue) &&
+                isNumber(tauxValue) &&
+                hasMaxOneDecimal(tauxValue)
+            );
+        }
 
-        console.log("isNotEmpty :" + isNotEmpty(montantValue));
-        console.log("isNumber :" + isNumber(montantValue));
-        console.log("isMontant OK :" + isMontantOK());
+        function isDureeOK() {
+            return isNotEmpty(dureeValue) && isNumber(dureeValue);
+        }
 
-        // let hasError = false;
-        // if (montantValue === "" || isNaN(montantValue)) {
-        //     tabError["montant"] = "du montant";
-        //     hasError = true;
-        //     montant.classList.add("error");
-        // }
-        // if (tauxValue === "" || isNaN(tauxValue)) {
-        //     tabError["taux"] = "du taux";
-        //     hasError = true;
-        //     taux.classList.add("error");
-        // }
-        // if (dureeValue === "" || isNaN(dureeValue)) {
-        //     tabError["duree"] = "de la durée";
-        //     hasError = true;
-        //     duree.classList.add("error");
-        // }
+        if (!isMontantOK()) {
+            hasError = true;
+            tabError["montant"] = "montant";
+            console.log("erreur montant");
+        }
+        if (!isTauxOK()) {
+            hasError = true;
+            tabError["taux"] = "taux";
+            console.log("erreur taux");
+        }
+        if (!isDureeOK()) {
+            hasError = true;
+            tabError["duree"] = "duree";
+            console.log("erreur duree");
+        }
 
-        // if (hasError) {
-        //     errorMSG = `Veuillez bien saisir les sections: ${Object.values(
-        //         tabError
-        //     )
-        //         .filter((v) => v !== "")
-        //         .join(", ")}`;
-        // }
+        if (hasError) {
+            errorMSG = `Veuillez bien saisir les sections: ${Object.values(
+                tabError
+            )
+                .filter((v) => v !== "")
+                .join(", ")}`;
+        }
 
         return errorMSG;
     }
