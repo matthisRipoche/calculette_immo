@@ -62,7 +62,7 @@ header img {
   display: flex;
   flex-direction: column;
   max-width: 523px;
-  width: 523px;
+  width: 100%;
 }
 #section_form .content .inputs .input {
   position: relative;
@@ -139,6 +139,7 @@ header img {
 #section_tableau {
   display: none;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 #section_tableau.active {
   display: block;
@@ -148,6 +149,7 @@ header img {
   flex-direction: column;
   align-items: center;
   position: relative;
+  padding: 10px;
   border: 1px solid #234b68;
   border-radius: 10px;
   box-shadow: 0 4px 8px #4b5563;
@@ -168,13 +170,90 @@ header img {
   transform: rotateZ(45deg);
   cursor: pointer;
 }
-#section_tableau .content table {
+#section_tableau .content .scrollx {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+#section_tableau .content .scrollx table {
   width: calc(100% - 100px);
   border-spacing: 0;
+  margin: 0 auto;
 }
-#section_tableau .content table thead {
+#section_tableau .content .scrollx table thead {
   padding-bottom: 50px;
 }
-#section_tableau .content table thead th {
+#section_tableau .content .scrollx table thead th {
   text-align: left;
+}
+#section_tableau .content .scrollx table thead td {
+  margin: 5px 10px;
+}
+
+.hidepdf {
+  display: none;
+}
+.hidepdf #pdfcontent {
+  text-align: center;
+  margin: 20px auto;
+}
+.hidepdf #pdfcontent .imagepdf {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+.hidepdf #pdfcontent h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.hidepdf #pdfcontent table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.hidepdf #pdfcontent table th,
+.hidepdf #pdfcontent table td {
+  border: 1px solid #ccc;
+  padding: 10px 50px;
+}
+.hidepdf #pdfcontent table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+@media screen and (max-width: 724px) {
+  header {
+    padding: 50px 0;
+  }
+  #section_form .content h2 {
+    margin: 10px auto;
+    text-align: center;
+  }
+  #section_form .content .inputs .input {
+    flex-direction: column;
+    height: 60px;
+  }
+  #section_form .content .inputs .input input {
+    height: 30px;
+  }
+  #section_form .content .inputs .input::after {
+    height: 34px;
+    bottom: 0;
+    margin-right: 10px;
+  }
+  #section_form .content .inputs .input label {
+    margin: 0 auto;
+  }
+  #section_form .content .inputs #errormsg {
+    margin-left: 10px;
+  }
+  #section_tableau .content h2 {
+    text-align: center;
+  }
+  #section_tableau .content .scrollx {
+    overflow-x: scroll;
+  }
+  #section_tableau .content .scrollx table {
+    width: 700px !important;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+.hidepdf {
+    display: none;
+
+    #pdfcontent {
+        text-align: center;
+        margin: 20px auto;
+
+        .imagepdf {
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+
+            th,
+            td {
+                border: 1px solid #ccc;
+                padding: 10px 50px;
+            }
+
+            th {
+                background-color: #f2f2f2;
+                color: #333;
+            }
+        }
+    }
+}

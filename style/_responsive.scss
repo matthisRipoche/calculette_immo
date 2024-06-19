@@ -1,0 +1,50 @@
+@media screen and (max-width: 724px) {
+    header {
+        padding: 50px 0;
+    }
+    #section_form {
+        .content {
+            h2 {
+                margin: 10px auto;
+                text-align: center;
+            }
+            .inputs {
+                .input {
+                    flex-direction: column;
+                    height: 60px;
+                    input {
+                        height: 30px;
+                    }
+                    &::after {
+                        height: 34px;
+                        bottom: 0;
+                        margin-right: 10px;
+                    }
+
+                    label {
+                        margin: 0 auto;
+                    }
+                }
+
+                #errormsg {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    #section_tableau {
+        .content {
+            h2 {
+                text-align: center;
+            }
+            .scrollx {
+                overflow-x: scroll;
+
+                table {
+                    width: 700px !important;
+                }
+            }
+        }
+    }
+}

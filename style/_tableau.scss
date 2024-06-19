@@ -1,6 +1,7 @@
 #section_tableau {
     display: none;
     margin-top: 50px;
+    margin-bottom: 50px;
     &.active {
         display: block;
     }
@@ -9,6 +10,7 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+        padding: 10px;
 
         border: 1px solid $blue_microlead;
         border-radius: 10px;
@@ -37,13 +39,23 @@
             cursor: pointer;
         }
 
-        table {
-            width: calc(100% - 100px);
-            border-spacing: 0;
-            thead {
-                padding-bottom: 50px;
-                th {
-                    text-align: left;
+        .scrollx {
+            width: 100%;
+            margin: 0 auto;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            table {
+                width: calc(100% - 100px);
+                border-spacing: 0;
+                margin: 0 auto;
+                thead {
+                    padding-bottom: 50px;
+                    th {
+                        text-align: left;
+                    }
+                    td {
+                        margin: 5px 10px;
+                    }
                 }
             }
         }

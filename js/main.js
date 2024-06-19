@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     FormManager();
-    pdfManager();
 });
 
 function FormManager() {
@@ -127,9 +126,13 @@ function FormManager() {
     }
 
     function Calcul(tbody, montant, taux, duree) {
+        const pdfBody = document.querySelector("#pdf-table-body");
+
         montant = parseFloat(montant);
         taux = parseFloat(taux);
         duree = parseInt(duree) * 12;
+
+        MakeRecap(montant, taux, duree);
 
         let soldeInit = montant;
         const tauxInteretMensuel = taux / 12 / 100;
@@ -178,8 +181,17 @@ function FormManager() {
             `;
 
             tbody.insertAdjacentHTML("beforeend", row);
+            pdfBody.insertAdjacentHTML("beforeend", row);
+        }
+
+        function MakeRecap(montant, taux, duree) {
+            const recapMontant = document.querySelector("#recap_montant");
+            const recapTaux = document.querySelector("#recap_taux");
+            const recapDuree = document.querySelector("#recap_duree");
+
+            recapMontant.innerHTML = "montant : " + montant + "€";
+            recapTaux.innerHTML = "taux : " + taux + "%";
+            recapDuree.innerHTML = "durée : " + duree + "mois";
         }
     }
 }
-
-function pdfManager() {}

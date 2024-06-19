@@ -37,8 +37,6 @@
                     </div>
                     <div id="error"></div>
                 </div>
-
-
                 <input class="btn" id="btn_submit" type="submit" value="Calculer">
             </form>
         </div>
@@ -48,28 +46,55 @@
             <div class="content">
                 <div id="close_tab">+</div>
                 <h2>Tableau d'amortissement</h2>
+                <div class="scrollx">
+                    <table id="mytable">
+                        <thead>
+                            <tr>
+                                <th>Mois</th>
+                                <th>Solde initial</th>
+                                <th>Echeance</th>
+                                <th>Interets</th>
+                                <th>Amortissement</th>
+                                <th>Solde restant</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
 
-                <table id="mytable">
-                    <thead>
-                        <tr>
-                            <th>Mois</th>
-                            <th>Solde initial</th>
-                            <th>Echeance</th>
-                            <th>Interets</th>
-                            <th>Amortissement</th>
-                            <th>Solde restant</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body">
-
-                    </tbody>
-                </table>
-
+                        </tbody>
+                    </table>
+                </div>
                 <input class="btn" id="pdfbutton" type="button" value="Download PDF">
             </div>
         </div>
     </section>
+
+    <section class="hidepdf">
+        <div id="pdfcontent">
+            <img class="imagepdf" src="img/logo.svg" alt="">
+            <h2>Tableau d'amortissement</h2>
+            <p id="recap_montant"></p>
+            <p id="recap_taux"></p>
+            <p id="recap_duree"></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mois</th>
+                        <th>Solde initial</th>
+                        <th>Echeance</th>
+                        <th>Interets</th>
+                        <th>Amortissement</th>
+                        <th>Solde restant</th>
+                    </tr>
+                </thead>
+                <tbody id="pdf-table-body">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/pdfmanager.js"></script>
 </body>
 
 </html>
