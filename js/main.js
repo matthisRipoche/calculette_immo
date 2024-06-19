@@ -21,20 +21,20 @@ function FormManager() {
 
         const errorMSG = GestionErreur(tbody, montant, taux, duree);
 
-        console.log("avant");
-        console.log(errorMSG);
-        console.log("apres");
+        displayErrorMSG(errorMSG);
 
         if (errorMSG === "") {
             Calcul(tbody, montant, taux, duree);
         }
+    });
 
+    function displayErrorMSG(errorMSG) {
         const errorMSGcolor = `<p id="errormsg">${errorMSG}</p>`;
 
         const errorElement = document.querySelector("#error");
         errorElement.innerHTML = "";
         errorElement.insertAdjacentHTML("beforeend", errorMSGcolor);
-    });
+    }
 
     function GestionErreur(tbody, montantValue, tauxValue, dureeValue) {
         let errorMSG = "";
@@ -127,6 +127,10 @@ function FormManager() {
     }
 
     function Calcul(tbody, montant, taux, duree) {
+        montant = parseFloat(montant);
+        taux = parseFloat(taux);
+        duree = parseInt(duree) * 12;
+
         let soldeInit = montant;
         const tauxInteretMensuel = taux / 12 / 100;
         const echeance =
@@ -152,29 +156,29 @@ function FormManager() {
 
             soldeInit = soldeRest;
         }
-    }
 
-    function GetRow(
-        tbody,
-        mois,
-        soldeInit,
-        echeance,
-        interet,
-        amortissement,
-        soldeRest
-    ) {
-        const row = `                
-        <tr>
-            <td>${mois}</td>
-            <td>${soldeInit} €</td>
-            <td>${echeance} €</td>
-            <td>${interet} €</td>
-            <td>${amortissement} €</td>
-            <td>${soldeRest} €</td>
-        </tr>
-        `;
+        function GetRow(
+            tbody,
+            mois,
+            soldeInit,
+            echeance,
+            interet,
+            amortissement,
+            soldeRest
+        ) {
+            const row = `                
+            <tr>
+                <td>${mois}</td>
+                <td>${soldeInit} €</td>
+                <td>${echeance} €</td>
+                <td>${interet} €</td>
+                <td>${amortissement} €</td>
+                <td>${soldeRest} €</td>
+            </tr>
+            `;
 
-        tbody.insertAdjacentHTML("beforeend", row);
+            tbody.insertAdjacentHTML("beforeend", row);
+        }
     }
 }
 
