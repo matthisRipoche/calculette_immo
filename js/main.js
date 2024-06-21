@@ -55,16 +55,13 @@ function FormManager() {
         function isNotEmpty(value) {
             return value != "";
         }
-
         function isNumber(value) {
             return !isNaN(value) && isFinite(value);
         }
-
         function hasMaxOneDecimal(value) {
             const pattern = /^\d+(\.\d{1})?$/;
             return pattern.test(value.toString());
         }
-
         function isInt(value) {
             const pattern = /^\d+(\.\d{0})?$/;
             return pattern.test(value.toString());
@@ -73,7 +70,6 @@ function FormManager() {
         function isMontantOK() {
             return isNotEmpty(montantValue) && isNumber(montantValue);
         }
-
         function isTauxOK() {
             return (
                 isNotEmpty(tauxValue) &&
@@ -81,7 +77,6 @@ function FormManager() {
                 hasMaxOneDecimal(tauxValue)
             );
         }
-
         function isDureeOK() {
             return isNotEmpty(dureeValue) && isNumber(dureeValue);
         }
